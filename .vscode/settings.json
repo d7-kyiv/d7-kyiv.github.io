@@ -1,0 +1,15 @@
+{
+  "grammarly.files.include": [ "**" ],
+  "grammarly.files.exclude": ["**/*.git"],
+  "grammarly.config.suggestions.OxfordComma": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs":"active",
+  "markdown.extension.toc.unorderedList.marker": "*",
+  "markdown.extension.toc.levels": "2..6",
+  "cSpell.language": "uk",
+  "markdownlint.config": {
+    "code-block-style": false
+  },
+  "cSpell.words": [
+  ]
+}

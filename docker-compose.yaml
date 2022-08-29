@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  docs:
+    build: .
+    image: d7-kyiv-docs:latest
+    ports:
+      - 8765:8765
+    volumes:
+      - ./:/docs/

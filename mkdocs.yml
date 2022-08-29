@@ -1,0 +1,86 @@
+site_name: ЧаПи Д7 Київ
+repo_url: 'https://github.com/d7-kyiv/d7-kyiv.github.io'
+use_directory_urls: true
+site_url: 'https://d7-kyiv.github.io/'
+
+theme:
+  name: material
+  language: uk
+  logo: images/d7-kyiv-white.png
+
+  # https://squidfunk.github.io/mkdocs-material/customization/#setup-and-theme-structure
+  custom_dir: mkdocs-theme-overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/lightbulb
+        name: "Switch to dark mode"
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/lightbulb-outline
+        name: "Switch to light mode"
+  features:
+    - navigation.instant
+    # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-annotations
+    - content.code.annotate
+  favicon: images/favicon.png
+
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  # Automatically build structure
+  # See https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+  - ...
+
+markdown_extensions:
+  # Adds boxes for Notes, Warnings, etc.
+  # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types
+  - admonition
+  # Adds colapsable boxes
+  # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#collapsible-blocks
+  - pymdownx.details
+  # Adds attribute lists to generated HTML
+  - attr_list
+  # Add footnotes support
+  - footnotes
+  # Builds a table of contents
+  - toc:
+      # Puts a "¶" at the end of each header, which copies a link to that header when clicked
+      permalink: "¶"
+  # code syntax highlight
+  # https://facelessuser.github.io/pymdown-extensions/extensions/highlight/
+  - pymdownx.highlight:
+      linenums: true
+  # allows nesting of code blocks inside other blocks
+  - pymdownx.superfences
+  # allows use of emoji and icons from font awesome and other places
+  # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  # allow content tabs
+  # https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/superfences/
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  # https://squidfunk.github.io/mkdocs-material/reference/lists/#using-definition-lists
+  - def_list
+
+# https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins
+plugins:
+  - search
+  # dynamic nav
+  - awesome-pages
+
+extra_css:
+  - _css/d7-colors.css
